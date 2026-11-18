@@ -1,0 +1,64 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 200" width="200" height="200" role="img" aria-labelledby="t">
+  <title id="t">BurgerKitten Logo – Burger mit Katzenohren</title>
+  <defs>
+    <pattern id="gingham" width="24" height="24" patternUnits="userSpaceOnUse">
+      <rect width="24" height="24" fill="#fff3ec"/>
+      <rect width="12" height="24" fill="#f8c8dc" opacity="0.45"/>
+      <rect width="24" height="12" fill="#f8c8dc" opacity="0.45"/>
+    </pattern>
+  </defs>
+
+  <!-- Badge -->
+  <circle cx="100" cy="100" r="97" fill="#ffffff"/>
+  <circle cx="100" cy="100" r="90" fill="url(#gingham)" stroke="#f7b7a3" stroke-width="4"/>
+
+  <g stroke="#4a3b47" stroke-width="4" stroke-linejoin="round" stroke-linecap="round">
+
+    <!-- Katzenschwanz -->
+    <path d="M152 148 C176 150 182 122 170 110" fill="none" stroke-width="14"/>
+    <path d="M152 148 C176 150 182 122 170 110" fill="none" stroke="#f9d2a5" stroke-width="6"/>
+
+    <!-- Untere Bun -->
+    <path d="M46 138 H154 Q154 158 130 158 H70 Q46 158 46 138 Z" fill="#f9d2a5"/>
+
+    <!-- Patty -->
+    <rect x="44" y="118" width="112" height="21" rx="10.5" fill="#b98a78"/>
+
+    <!-- Käse mit Tropfen -->
+    <path d="M46 111 H154 V119 H130 L122 131 L114 119 H46 Z" fill="#fbe39a"/>
+
+    <!-- Salat -->
+    <path d="M40 99 H160 V109 q-7.5 8 -15 0 t-15 0 t-15 0 t-15 0 t-15 0 t-15 0 t-15 0 t-15 0 Z" fill="#a8ddb5"/>
+
+    <!-- Katzenohren -->
+    <polygon points="48,86 52,38 86,54" fill="#f9d2a5"/>
+    <polygon points="152,86 148,38 114,54" fill="#f9d2a5"/>
+    <polygon points="57,74 58,51 75,59" fill="#f8a9c4" stroke="none"/>
+    <polygon points="143,74 142,51 125,59" fill="#f8a9c4" stroke="none"/>
+
+    <!-- Obere Bun -->
+    <path d="M45 100 C45 62 70 48 100 48 C130 48 155 62 155 100 Z" fill="#f9d2a5"/>
+  </g>
+
+  <!-- Sesam -->
+  <g fill="#fff3e0" stroke="#4a3b47" stroke-width="1.5">
+    <ellipse cx="100" cy="58" rx="3.6" ry="2" transform="rotate(-20 100 58)"/>
+    <ellipse cx="88" cy="63" rx="3.6" ry="2" transform="rotate(25 88 63)"/>
+    <ellipse cx="112" cy="63" rx="3.6" ry="2" transform="rotate(-25 112 63)"/>
+  </g>
+
+  <!-- Gesicht -->
+  <g fill="none" stroke="#4a3b47" stroke-width="3" stroke-linecap="round" stroke-linejoin="round">
+    <path d="M74 80 Q80 74 86 80"/>
+    <path d="M114 80 Q120 74 126 80"/>
+    <path d="M94 91 Q97 95 100 91 Q103 95 106 91"/>
+    <!-- Schnurrhaare -->
+    <path d="M66 86 L52 83" stroke-width="2"/>
+    <path d="M66 91 L52 93" stroke-width="2"/>
+    <path d="M134 86 L148 83" stroke-width="2"/>
+    <path d="M134 91 L148 93" stroke-width="2"/>
+  </g>
+  <polygon points="96,85 104,85 100,89.5" fill="#f08aa8" stroke="#4a3b47" stroke-width="1.5" stroke-linejoin="round"/>
+  <circle cx="72" cy="90" r="5" fill="#f8a9c4" opacity="0.7"/>
+  <circle cx="128" cy="90" r="5" fill="#f8a9c4" opacity="0.7"/>
+</svg>

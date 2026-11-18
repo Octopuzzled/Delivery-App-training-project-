@@ -1,0 +1,56 @@
+:root {
+    /* ---------- Brand (pastel peach instead of orange) ---------- */
+    --color-primary: #f7b7a3; /* header, category bars, buttons */
+    --color-primary-hover: #f2a08a; /* hover / active state */
+    --color-primary-soft: #fde6dd; /* card background */
+    --color-primary-deep: #d9694f; /* "Burger" in the title, icons – large text only (24px+) */
+
+    /* ---------- Accents ---------- */
+    --color-pink: #f8c8dc; /* cat ears, badges, highlights */
+    --color-mint: #bde5d2; /* vegetarian tags, success */
+    --color-lavender: #d8ccf2; /* secondary buttons, tags */
+    --color-butter: #fbe8a6; /* rating chip, cheese */
+
+    /* ---------- Neutrals (warm instead of grey) ---------- */
+    --color-bg: #fffbf7; /* page background */
+    --color-surface: #ffffff; /* panels, dialogs */
+    --color-border: #f0d9d0;
+    --color-text: #3f3340; /* main text (plum instead of black) */
+    --color-text-muted: #7b6b79; /* descriptions, secondary info */
+    --color-text-on-primary: #3f3340; /* text on pastel surfaces (contrast ~7:1) */
+
+    /* ---------- Basket (counterpart to the dark basket panel) ---------- */
+    --color-basket-bg: #5a4a5e;
+    --color-basket-text: #fff7f2;
+    --color-basket-line: #77667b; /* dividers inside the basket */
+
+    /* ---------- Status ---------- */
+    --color-success: #8fd3b3;
+    --color-error: #e88a9a;
+    --color-focus: #b9a4ea; /* keyboard focus ring */
+
+    /* ---------- Typography ---------- */
+    --font-heading: "Fredoka", "Nunito", system-ui, sans-serif;
+    --font-body: "Nunito", system-ui, -apple-system, "Segoe UI", sans-serif;
+    --font-size-sm: 14px;
+    --font-size-base: 16px;
+    --font-size-lg: 20px;
+    --font-size-xl: 32px;
+    --font-size-title: 44px;
+
+    /* ---------- Spacing ---------- */
+    --space-1: 4px;
+    --space-2: 8px;
+    --space-3: 16px;
+    --space-4: 24px;
+    --space-5: 40px;
+    --space-6: 64px;
+
+    /* ---------- Radius & shadows ---------- */
+    --radius-sm: 8px;
+    --radius-md: 16px;
+    --radius-lg: 28px;
+    --radius-round: 9999px;
+    --shadow-soft: 0 4px 16px rgba(90, 74, 94, 0.12);
+    --shadow-card: 0 2px 8px rgba(90, 74, 94, 0.1);
+}
