@@ -5,9 +5,11 @@
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
         <title>Bestell App</title>
         <link rel="stylesheet" href="style.css" />
-        <script src="./script.js"></script>
+        <script src="./scripts/db.js"></script>
+        <script src="./scripts/templates.js"></script>
+        <script src="./script.js" defer></script>
     </head>
-    <body>
+    <body onload="init()">
         <header class="site-header">
             <img src="./assets/icon/site-logo.svg" alt="Website Icon" />
             <img src="./assets/icon/menu.svg" alt="Menu Icon" />
@@ -41,59 +43,7 @@
                     </div>
                 </div>
                 <div class="basket-content-wrapper">
-                    <div class="menu-cards">
-                        <div class="card">
-                            <img
-                                src="./assets/img/burger1.jpg"
-                                alt="Example Picture"
-                            />
-                            <div class="details">
-                                <div class="details-header">
-                                    <h3>Veggie mushroom black burger</h3>
-                                    <p>16,90€</p>
-                                </div>
-
-                                <p>Description about the dish</p>
-                                <button class="button-to-basket">
-                                    Add to basket
-                                </button>
-                            </div>
-                        </div>
-                        <div class="card">
-                            <img
-                                src="./assets/img/burger1.jpg"
-                                alt="Example Picture"
-                            />
-                            <div class="details">
-                                <div class="details-header">
-                                    <h3>Veggie mushroom black burger</h3>
-                                    <p>16,90€</p>
-                                </div>
-
-                                <p>Description about the dish</p>
-                                <button class="button-to-basket">
-                                    Add to basket
-                                </button>
-                            </div>
-                        </div>
-                        <div class="card">
-                            <img
-                                src="./assets/img/burger1.jpg"
-                                alt="Example Picture"
-                            />
-                            <div class="details">
-                                <div class="details-header">
-                                    <h3>Veggie mushroom black burger</h3>
-                                    <p>16,90€</p>
-                                </div>
-
-                                <p>Description about the dish</p>
-                                <button class="button-to-basket">
-                                    Add to basket
-                                </button>
-                            </div>
-                        </div>
-                    </div>
+                    <div id="cards" class="menu-cards"></div>
                     <section class="basket">
                         <h3>Your Basket</h3>
                     </section>
