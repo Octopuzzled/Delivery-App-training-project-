@@ -23,6 +23,7 @@ function getDishTemplate(array, index) {
 
 function getEmptyBasketTemplate() {
   let html = `
+    <button class="dialog-close basket-close" onclick="toggleBasket()" aria-label="Close basket">✕</button>
     <h3>Your Basket</h3>
     <p>Nothing here yet</p>
     <p>Go ahead and choose something delicious!</p>
@@ -60,6 +61,7 @@ function getBasketTemplate(array, index) {
 function getFilledBasketTemplate(itemsHtml, subtotal, deliveryFee) {
   let total = subtotal + deliveryFee;
   let html = `
+    <button class="dialog-close basket-close" onclick="toggleBasket()" aria-label="Close basket">✕</button>
     <h3>Your Basket</h3>
     <div class="basket-items">${itemsHtml}</div>
     <div class="basket-summary">

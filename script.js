@@ -71,6 +71,7 @@ function resetBasket() {
 function buy() {
   openDialog();
   resetBasket();
+  document.getElementById("basket").classList.remove("open");
 }
 
 function openDialog() {
@@ -85,4 +86,8 @@ function closeOnBackdrop(event) {
   if (event.target === DIALOG_REF) {
     closeDialog();
   }
+}
+
+function toggleBasket() {
+  document.getElementById("basket").classList.toggle("open");
 }
