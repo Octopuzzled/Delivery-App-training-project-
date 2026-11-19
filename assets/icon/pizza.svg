@@ -1,0 +1,21 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="512" height="512" viewBox="0 0 88 91" fill="none">
+  <title>Pizza slice logo</title>
+  <g stroke="#4B2815" stroke-width="3.2" stroke-linecap="round" stroke-linejoin="round">
+    <!-- golden crust -->
+    <path d="M13.2 24.8C12.2 20.1 15.1 15.9 19.8 14.2C35.1 8.7 53.1 8.7 68.2 14.2C72.9 15.9 75.8 20.1 74.8 24.8L71.9 31.2L16.1 31.2L13.2 24.8Z" fill="#F7D99A"/>
+    <!-- cheese body -->
+    <path d="M16.1 29.9H71.9L65.5 67.1C65 70.1 61.9 72.2 58.8 71.4L46.5 68.1C44.9 67.7 43.1 67.7 41.5 68.1L29.2 71.4C26.1 72.2 23 70.1 22.5 67.1L16.1 29.9Z" fill="#F58A24"/>
+    <!-- browned crust edge -->
+    <path d="M16.1 29.9H71.9" stroke="#D96A1B" stroke-width="4.2"/>
+    <!-- pepperoni -->
+    <path d="M29.2 42.4C29.2 38.8 32.1 36 35.6 36C39.1 36 42 38.8 42 42.4C42 45.9 39.1 48.8 35.6 48.8C32.1 48.8 29.2 45.9 29.2 42.4Z" fill="#C94D24"/>
+    <path d="M49.2 53.1C49.2 49.5 52.1 46.7 55.6 46.7C59.1 46.7 62 49.5 62 53.1C62 56.6 59.1 59.5 55.6 59.5C52.1 59.5 49.2 56.6 49.2 53.1Z" fill="#C94D24"/>
+    <path d="M24.4 58.1C24.4 55.3 26.7 53 29.5 53C32.3 53 34.6 55.3 34.6 58.1C34.6 60.9 32.3 63.2 29.5 63.2C26.7 63.2 24.4 60.9 24.4 58.1Z" fill="#C94D24"/>
+    <!-- tiny pepperoni highlights -->
+    <path d="M34 40.6L36.5 39.6M54 51.3L56.3 50.3M28.3 57.2L30 56.4" stroke="#F7B16A" stroke-width="1.8"/>
+    <!-- crust sesame / baked marks -->
+    <path d="M25.2 19.7L27.4 17.9M43.8 17.2L45.5 15.8M59.7 20.1L61.6 18.5" stroke="#8B4A20" stroke-width="2.5"/>
+    <!-- bottom point accent -->
+    <path d="M41.5 68.1C42.3 68.8 43.2 69.7 44 71.4C44.8 69.7 45.7 68.8 46.5 68.1" stroke="#4B2815" stroke-width="2.2"/>
+  </g>
+</svg>

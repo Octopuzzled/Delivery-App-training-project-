@@ -1,0 +1,41 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" role="img" aria-labelledby="title desc">
+  <title id="title">Sides — French fries</title>
+  <desc id="desc">A cheerful red carton filled with golden fries, drawn with a thick dark brown outline.</desc>
+  <g stroke="#3B1B10" stroke-width="15" stroke-linejoin="round" stroke-linecap="round">
+    <!-- fries behind the carton -->
+    <path fill="#F7B51B" d="M103 281 72 167q-5-19 14-25l30-10q19-6 25 14l37 133z"/>
+    <path fill="#FFD34D" d="m89 151 28-9 9 18-29 9z" stroke="none"/>
+    <path fill="#F9B51B" d="m153 284-14-158q-2-20 18-22l32-3q20-2 22 18l18 165z"/>
+    <path fill="#FFE07A" d="m155 120 34-3 8 19-39 3z" stroke="none"/>
+    <path fill="#F6A914" d="m209 282 5-171q1-20 21-20h32q20 0 20 20l-3 171z"/>
+    <path fill="#FFE07A" d="m230 108 34 0 8 19h-43z" stroke="none"/>
+    <path fill="#F9B51B" d="m273 282 26-158q3-20 23-16l31 6q20 4 16 24l-30 153z"/>
+    <path fill="#FFE07A" d="m313 125 33 6 4 20-40-7z" stroke="none"/>
+    <path fill="#F7A915" d="m337 292 53-137q7-18 26-11l29 12q18 7 10 26l-59 137z"/>
+    <path fill="#FFE07A" d="m401 158 31 13-2 20-37-15z" stroke="none"/>
+    <path fill="#F7B51B" d="m115 307-42-93q-8-18 10-27l28-13q18-8 27 10l54 112z"/>
+    <path fill="#FFE07A" d="m91 202 30-13 12 17-35 15z" stroke="none"/>
+    <path fill="#F8B21A" d="m173 308-3-117q0-20 20-20h31q20 0 20 20l2 117z"/>
+    <path fill="#FFE07A" d="m188 190 34 0 7 18h-40z" stroke="none"/>
+    <path fill="#F8B21A" d="m239 309 9-117q2-20 22-18l30 3q20 2 18 22l-13 114z"/>
+    <path fill="#FFE07A" d="m264 190 33 3 5 19-40-4z" stroke="none"/>
+    <path fill="#F7B51B" d="m307 311 30-111q5-19 25-14l29 8q19 5 13 24l-35 111z"/>
+    <path fill="#FFE07A" d="m351 201 32 9 1 20-39-11z" stroke="none"/>
+    <!-- carton body -->
+    <path fill="#F0441F" d="M91 252q82 29 165 30 84 0 165-30l-29 204q-3 23-27 25H147q-24-2-27-25z"/>
+    <path fill="#FF7040" stroke="none" d="m117 287 29 165q2 11 12 11l18-1-33-171z"/>
+    <path fill="#C92C19" stroke="none" d="m394 285-28 177q16 2 23-12l28-165z"/>
+    <!-- cream wavy rim -->
+    <path fill="#FFF0D7" d="M88 252q78 34 168 35 91 0 177-35l-5 34q-81 33-172 33-91 0-173-33z"/>
+    <!-- little cat mascot on the front of the carton -->
+    <g stroke="#3B1B10" stroke-width="7" stroke-linejoin="round" stroke-linecap="round">
+      <path fill="#FFF0D7" d="M207 369 211 340 236 353Q256 345 276 353L301 340 305 369Q316 382 310 402Q301 430 256 432Q211 430 202 402Q196 382 207 369Z"/>
+      <path fill="none" d="M229 386q8-8 16 0M267 386q8-8 16 0"/>
+      <path fill="#3B1B10" stroke="none" d="M239 386q6-7 11 0v5q-5 6-11 0zM262 386q6-7 11 0v5q-5 6-11 0z"/>
+      <path fill="#F0441F" d="M251 399q5-5 10 0l-5 6z" stroke-width="4"/>
+      <path fill="none" d="M256 405q-8 9-16 1M256 405q8 9 16 1M211 398l-23-5M212 407l-23 5M301 398l23-5M300 407l23 5" stroke-width="4"/>
+    </g>
+    <!-- subtle lower carton curve -->
+    <path fill="none" d="M145 478q111-18 222 0" stroke="#7A2A16" stroke-width="8"/>
+  </g>
+</svg>

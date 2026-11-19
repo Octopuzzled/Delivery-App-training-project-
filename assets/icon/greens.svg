@@ -1,0 +1,41 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" width="512" height="512" role="img" aria-labelledby="title desc">
+  <title id="title">Greens — Japanese-inspired salads</title>
+  <desc id="desc">A modern emblem of a fresh salad bowl with shiso leaves, cucumber, edamame and chopsticks.</desc>
+  <defs>
+    <clipPath id="bowlClip"><path d="M105 285h302c-9 103-66 160-151 160s-142-57-151-160Z"/></clipPath>
+  </defs>
+  <!-- restrained sun-disc backdrop -->
+  <circle cx="256" cy="240" r="190" fill="#F3EEDC"/>
+  <circle cx="256" cy="240" r="174" fill="none" stroke="#D9E3C6" stroke-width="5"/>
+  <!-- chopsticks -->
+  <g stroke="#294B35" stroke-width="13" stroke-linecap="round">
+    <path d="M329 250 414 105"/><path d="M365 266 451 121"/>
+  </g>
+  <g stroke="#E5A45D" stroke-width="4" stroke-linecap="round">
+    <path d="m409 113 9-15"/><path d="m446 129 9-15"/>
+  </g>
+  <!-- leafy greens rising from the bowl -->
+  <path d="M256 300c-65-22-103-71-91-119 42 3 79 31 91 79 3-62 40-104 91-111 12 53-19 117-91 151Z" fill="#3E7B4A" stroke="#294B35" stroke-width="10" stroke-linejoin="round"/>
+  <path d="M253 294c-16-64-45-91-78-111m82 111c14-64 43-96 83-121" fill="none" stroke="#B9D58B" stroke-width="8" stroke-linecap="round"/>
+  <path d="M185 302c-42-8-71-36-72-69 37-8 73 9 91 43m124 24c37-19 72-17 98 7-19 34-55 49-93 38" fill="#8DBB5A" stroke="#294B35" stroke-width="9" stroke-linejoin="round"/>
+  <path d="m132 245 59 44m211-2-67 33" fill="none" stroke="#D9E9B4" stroke-width="7" stroke-linecap="round"/>
+  <!-- bowl body -->
+  <path d="M105 285h302c-9 103-66 160-151 160s-142-57-151-160Z" fill="#FFF8E9" stroke="#294B35" stroke-width="12" stroke-linejoin="round"/>
+  <g clip-path="url(#bowlClip)">
+    <path d="M100 354q156 42 312 0v110H100Z" fill="#E9B879" opacity=".38"/>
+    <path d="M125 390q130 34 262 0" fill="none" stroke="#E2C79C" stroke-width="8" stroke-linecap="round"/>
+  </g>
+  <!-- rim -->
+  <path d="M101 285q155 33 310 0" fill="none" stroke="#294B35" stroke-width="17" stroke-linecap="round"/>
+  <path d="M119 287q137 25 274 0" fill="none" stroke="#D9E9B4" stroke-width="6" stroke-linecap="round"/>
+  <!-- fresh toppings across the rim -->
+  <g stroke="#294B35" stroke-width="8" stroke-linejoin="round">
+    <ellipse cx="171" cy="273" rx="28" ry="19" transform="rotate(28 171 273)" fill="#A9C96B"/>
+    <ellipse cx="340" cy="267" rx="28" ry="19" transform="rotate(-25 340 267)" fill="#A9C96B"/>
+    <path d="M224 267q18-29 36 0-18 28-36 0Z" fill="#F0A05A"/>
+  </g>
+  <g fill="#F7E9C8">
+    <ellipse cx="167" cy="270" rx="5" ry="8" transform="rotate(28 167 270)"/>
+    <ellipse cx="344" cy="264" rx="5" ry="8" transform="rotate(-25 344 264)"/>
+  </g>
+</svg>

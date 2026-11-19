@@ -9,6 +9,10 @@ function init() {
     updateBasket();
 }
 
+function renderNav() {
+  
+}
+
 function renderMenu() {
   let html = "";
   for (let i = 0; i < categories.length; i++) {

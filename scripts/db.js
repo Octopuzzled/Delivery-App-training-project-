@@ -2,6 +2,7 @@ const categories = [
     { id: "burgers", title: "Burger & Sandwiches", icon: "./assets/icon/burger.svg" },
     { id: "pizza",   title: "Pizza (30cm)",        icon: "./assets/icon/pizza.svg" },
     { id: "greens",  title: "Greens",              icon: "./assets/icon/greens.svg" },
+    { id: "sides",  title: "On the side",          icon: "./assets/icon/sides.svg" },
 ];
 
 // amount = how many of this dish are in the basket (starts at 0)
@@ -127,5 +128,25 @@ const dishesArray = [
         price: 10.5,
         amount: 0,
         image: "./assets/img/Soba Purr Salad.jpg",
+    },
+
+    // ---------- On the side ----------
+    {
+        category: "sides",
+        name: "Kitty Fries",
+        description:
+            "Crispy golden fries, sea salt, rosemary, with ketchup or garlic mayo",
+        price: 4.5,
+        amount: 0,
+        image: "./assets/img/Kitty Fries.jpg",
+    },
+    {
+        category: "sides",
+        name: "Crunchy Onion Rings",
+        description:
+            "Beer-battered onion rings, smoky BBQ dip",
+        price: 5.2,
+        amount: 0,
+        image: "./assets/img/Crunchy Onion Rings.jpg",
     },
 ];
