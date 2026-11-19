@@ -4,20 +4,23 @@ let dishes;
 
 function init() {
     dishes = dishesArray;
-    renderCards();
+    renderMenu();
     loadBasket();
     updateBasket();
 }
 
-function renderCards() {
-    const CARD_REF = document.getElementById("cards");
-    let html = "";
-
-    for (let i = 0; i < dishes.length; i++) {
-        html += getDishTemplate(dishes, i);
+function renderMenu() {
+  let html = "";
+  for (let i = 0; i < categories.length; i++) {
+    let cardsHtml = "";
+    for (let j = 0; j < dishes.length; j++) {
+      if (dishes[j].category === categories[i].id) {
+        cardsHtml += getDishTemplate(dishes, j);
+      }
     }
-
-    CARD_REF.innerHTML = html;
+    html += getCategoryTemplate(categories[i], cardsHtml);
+  }
+  document.getElementById("menu").innerHTML = html;
 }
 
 // Saved as { "Dish name": amount } so reordering dishes in db.js can't mix up amounts

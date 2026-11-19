@@ -73,3 +73,17 @@ function getFilledBasketTemplate(itemsHtml, subtotal, deliveryFee) {
   `
   return html;
 }
+
+function getCategoryTemplate(category, cardsHtml) {
+    return `
+        <section class="menu-category">
+            <div class="category-header">
+                <div class="category-header-inner">
+                    <img src="${category.icon}" alt="" />
+                    <h2>${category.title}</h2>
+                </div>
+            </div>
+            <div class="menu-cards">${cardsHtml}</div>
+        </section>
+    `;
+}

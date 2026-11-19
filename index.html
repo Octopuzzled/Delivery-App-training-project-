@@ -36,18 +36,12 @@
                 </div>
             </section>
             <section class="menu-section">
-                <div class="category-header">
-                    <div class="category-header-inner">
-                        <img src="./assets/icon/burger.svg" alt="Burger icon" />
-                        <h2>Burger & Sandwiches</h2>
-                    </div>
-                </div>
-                <div class="basket-content-wrapper">
-                    <div id="cards" class="menu-cards"></div>
+                <div id="menu"></div>
+                <div class="basket-column">
                     <section id="basket" class="basket"></section>
                 </div>
             </section>
-            <dialog id="finished_order_dialog" class="order-confirmed-dialog" onclick="closeOnBackdrop(event)"</dialog>
+            <dialog id="finished_order_dialog" class="order-confirmed-dialog" onclick="closeOnBackdrop(event)">
                 <button
                     class="dialog-close"
                     onclick="closeDialog()"

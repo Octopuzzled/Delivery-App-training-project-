@@ -139,14 +139,28 @@ button {
     padding: 0 var(--space-4) var(--space-2);
 }
 
-.basket-content-wrapper {
-    max-width: 1440px;
+/* Invisible column over the whole menu: the basket sticks inside it
+   and overlaps the orange bars at the right edge of the 1440px frame */
+.menu-section {
+    position: relative;
+}
 
-    margin: calc(-1 * var(--category-bar-height)) auto 0; /* pulls the basket up over the orange bar */
+.basket-column {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    max-width: 1440px;
+    margin: 0 auto;
     display: flex;
-    justify-content: space-between;
+    justify-content: flex-end;
     align-items: flex-start;
-    gap: var(--space-4);
+    pointer-events: none; /* clicks go through to the cards */
+}
+
+.basket-column .basket {
+    pointer-events: auto;
 }
 
 .basket {
@@ -175,13 +189,10 @@ button {
     display: flex;
     flex-direction: column;
     gap: var(--space-3);
-    margin-top: calc(
-        var(--category-bar-height) + var(--space-4)
-    ); /* compensates for the wrapper's negative margin */
-    padding: 0 var(--space-4) var(--space-6);
-    flex: 1;
-    min-width: 0;
-    max-width: 1140px;
+    max-width: 1440px;
+    margin: var(--space-3) auto 0; /* gap between category bar and first card */
+    /* right padding keeps the cards out from under the 300px basket */
+    padding: 0 calc(300px + 2 * var(--space-4)) var(--space-5) var(--space-4);
 }
 
 /* ---------- Basket content ---------- */
@@ -529,10 +540,6 @@ button {
 
 /* ---------- Tablet: basket still visible, but everything is more compact ---------- */
 @media (min-width: 601px) and (max-width: 900px) {
-    .basket-content-wrapper {
-        gap: var(--space-2);
-    }
-
     .basket {
         flex-basis: 220px;
         padding: var(--space-3) var(--space-2);
@@ -554,7 +561,7 @@ button {
     }
 
     .menu-cards {
-        padding: 0 var(--space-2) var(--space-5) var(--space-3);
+        padding: 0 calc(220px + 2 * var(--space-2)) var(--space-5) var(--space-3);
         gap: var(--space-2);
     }
 
@@ -590,6 +597,10 @@ button {
 
     .hero-section {
         height: 220px;
+    }
+
+    .menu-cards {
+        padding: 0 var(--space-3) var(--space-5); /* no basket column on mobile */
     }
 
     .card {
