@@ -9,8 +9,8 @@
     </head>
     <body>
         <header class="site-header">
-            <img src="./assets/icon/" alt="Website Icon" />
-            <img src="" alt="Menu Icon" />
+            <img src="./assets/icon/site-logo.svg" alt="Website Icon" />
+            <img src="./assets/icon/menu.svg" alt="Menu Icon" />
         </header>
         <main>
             <section class="hero-section"></section>
@@ -20,10 +20,12 @@
                     alt="Logo Burgerkitten"
                 />
                 <div class="restaurant">
-                    <h1>BurgerKitten</h1>
-                    <div class="stars">
-                        <img src="./assets/icon/star.svg" alt="Star icon" />
-                        <p>4,1 (333)</p>
+                    <div class="name-wrapper">
+                        <h1><span class="name-accent">Burger</span>Kitten</h1>
+                        <div class="stars">
+                            <img src="./assets/icon/star.svg" alt="Star icon" />
+                            <p>4,1 <span class="rating-count">(333)</span></p>
+                        </div>
                     </div>
                     <p>
                         Burgers, pizza & greens – Purrfectly stacked,
@@ -33,27 +35,68 @@
             </section>
             <section class="menu-section">
                 <div class="category-header">
-                    <img src="./assets/icon/burger.svg" alt="Burger icon" />
-                    <h2>Burger & Sandwiches</h2>
+                    <div class="category-header-inner">
+                        <img src="./assets/icon/burger.svg" alt="Burger icon" />
+                        <h2>Burger & Sandwiches</h2>
+                    </div>
                 </div>
-                <div class="menu-cards">
-                    <div class="card">
-                        <img
-                            src="./assets/img/burger1.jpg"
-                            alt="Example Picture"
-                        />
-                        <div class="details">
-                            <div class="details-header">
-                                <h3>Veggie mushroom black burger</h3>
-                                <p>16,90€</p>
-                            </div>
+                <div class="basket-content-wrapper">
+                    <div class="menu-cards">
+                        <div class="card">
+                            <img
+                                src="./assets/img/burger1.jpg"
+                                alt="Example Picture"
+                            />
+                            <div class="details">
+                                <div class="details-header">
+                                    <h3>Veggie mushroom black burger</h3>
+                                    <p>16,90€</p>
+                                </div>
 
-                            <p>Description about the dish</p>
-                            <button class="button-to-basket">
-                                Add to basket
-                            </button>
+                                <p>Description about the dish</p>
+                                <button class="button-to-basket">
+                                    Add to basket
+                                </button>
+                            </div>
+                        </div>
+                        <div class="card">
+                            <img
+                                src="./assets/img/burger1.jpg"
+                                alt="Example Picture"
+                            />
+                            <div class="details">
+                                <div class="details-header">
+                                    <h3>Veggie mushroom black burger</h3>
+                                    <p>16,90€</p>
+                                </div>
+
+                                <p>Description about the dish</p>
+                                <button class="button-to-basket">
+                                    Add to basket
+                                </button>
+                            </div>
+                        </div>
+                        <div class="card">
+                            <img
+                                src="./assets/img/burger1.jpg"
+                                alt="Example Picture"
+                            />
+                            <div class="details">
+                                <div class="details-header">
+                                    <h3>Veggie mushroom black burger</h3>
+                                    <p>16,90€</p>
+                                </div>
+
+                                <p>Description about the dish</p>
+                                <button class="button-to-basket">
+                                    Add to basket
+                                </button>
+                            </div>
                         </div>
                     </div>
+                    <section class="basket">
+                        <h3>Your Basket</h3>
+                    </section>
                 </div>
             </section>
         </main>
