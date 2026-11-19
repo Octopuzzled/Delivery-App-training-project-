@@ -1,5 +1,5 @@
 // amount = how many of this dish are in the basket (starts at 0)
-const dishes = [
+const dishesArray = [
     {
         name: "The Purrfect Classic",
         description:
