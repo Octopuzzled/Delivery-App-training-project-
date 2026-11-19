@@ -24,6 +24,9 @@
     --color-basket-text: #fff7f2;
     --color-basket-line: #77667b; /* dividers inside the basket */
 
+    /* ---------- Overlay ---------- */
+    --color-backdrop: rgba(63, 51, 64, 0.6); /* dialog backdrop, based on --color-text (plum) */
+
     /* ---------- Status ---------- */
     --color-success: #8fd3b3;
     --color-error: #e88a9a;
