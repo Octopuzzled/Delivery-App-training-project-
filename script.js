@@ -5,12 +5,18 @@ let dishes;
 function init() {
     dishes = dishesArray;
     renderMenu();
+    renderNav();
     loadBasket();
     updateBasket();
 }
 
 function renderNav() {
-  
+  let html = "";
+  const NAV_REF = document.getElementById("navigation");
+  for (let i = 0; i < categories.length; i++) {
+    html += getNavTemplate(categories[i]);
+  }
+  NAV_REF.innerHTML = html;
 }
 
 function renderMenu() {

@@ -104,6 +104,7 @@ button {
 .menu-section {
     --category-bar-height: 38px;
     margin: 0 auto;
+    margin-top: var(--space-3);
 }
 
 .category-header {
@@ -166,7 +167,7 @@ button {
 .basket {
     position: sticky;
     z-index: 1;
-    top: var(--space-4);
+    top: calc(56px + var(--space-3)); /* stays below the sticky navigation */
     background-color: var(--color-basket-bg);
     flex: 0 0 300px;
     max-height: calc(100vh - 2 * var(--space-4));
@@ -193,6 +194,69 @@ button {
     margin: var(--space-3) auto 0; /* gap between category bar and first card */
     /* right padding keeps the cards out from under the 300px basket */
     padding: 0 calc(300px + 2 * var(--space-4)) var(--space-5) var(--space-4);
+}
+
+/* ---------- Category navigation (sticky, horizontally scrollable) ---------- */
+html {
+    scroll-behavior: smooth;
+}
+
+@media (prefers-reduced-motion: reduce) {
+    html {
+        scroll-behavior: auto;
+    }
+}
+
+.navigation {
+    --nav-height: 56px;
+    position: sticky;
+    top: 0;
+    z-index: 5; /* above cards and basket */
+    display: flex;
+    align-items: center;
+    gap: var(--space-2);
+    height: var(--nav-height);
+    /* left edge lines up with the 1440px content frame on wide screens */
+    padding: 0 max(var(--space-4), calc((100% - 1440px) / 2 + var(--space-4)));
+    overflow-x: auto;
+    background-color: var(--color-bg);
+    border-bottom: 1px solid var(--color-border);
+    scrollbar-width: none; /* swipe/scroll without a visible bar */
+}
+
+.navigation::-webkit-scrollbar {
+    display: none;
+}
+
+.nav-item {
+    flex-shrink: 0;
+    padding: var(--space-2) var(--space-3);
+    border-radius: var(--radius-round);
+    color: var(--color-text);
+    font-weight: 600;
+    text-decoration: none;
+    white-space: nowrap;
+    transition: background-color 0.2s;
+}
+
+.nav-item:hover {
+    background-color: var(--color-primary-soft);
+}
+
+.nav-item:focus-visible {
+    outline: 3px solid var(--color-focus);
+    outline-offset: 2px;
+}
+
+/* set by the scroll observer for the category currently in view */
+.nav-item.active {
+    background-color: var(--color-primary);
+    color: var(--color-text-on-primary);
+}
+
+/* anchor jumps stop below the sticky navigation instead of under it */
+.menu-category {
+    scroll-margin-top: 72px;
 }
 
 /* ---------- Basket content ---------- */
@@ -472,20 +536,26 @@ button {
     z-index: 10;
 }
 
-.mobile-footer a {
+.mobile-footer a,
+.mobile-footer button {
     display: flex;
     align-items: center;
     justify-content: center;
     width: 48px;
     height: 48px;
+    padding: 0;
+    background: transparent;
+    border: 0;
     border-radius: var(--radius-round);
 }
 
-.mobile-footer a:hover {
+.mobile-footer a:hover,
+.mobile-footer button:hover {
     background-color: var(--color-basket-line);
 }
 
-.mobile-footer a:focus-visible {
+.mobile-footer a:focus-visible,
+.mobile-footer button:focus-visible {
     outline: 3px solid var(--color-focus);
     outline-offset: 2px;
 }
@@ -538,6 +608,21 @@ button {
     }
 }
 
+/* ---------- Large screens: nav, category bar content and cards line up with the hero's left edge ---------- */
+@media (min-width: 1440px) {
+    .navigation {
+        padding-left: calc((100% - 1440px) / 2);
+    }
+
+    .category-header-inner {
+        padding-left: 0;
+    }
+
+    .menu-cards {
+        padding-left: 0;
+    }
+}
+
 /* ---------- Tablet: basket still visible, but everything is more compact ---------- */
 @media (min-width: 601px) and (max-width: 900px) {
     .basket {
@@ -561,7 +646,8 @@ button {
     }
 
     .menu-cards {
-        padding: 0 calc(220px + 2 * var(--space-2)) var(--space-5) var(--space-3);
+        padding: 0 calc(220px + 2 * var(--space-2)) var(--space-5)
+            var(--space-3);
         gap: var(--space-2);
     }
 
