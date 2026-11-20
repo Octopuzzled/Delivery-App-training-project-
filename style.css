@@ -266,6 +266,35 @@ html {
     margin-bottom: var(--space-4);
 }
 
+/* Delivery / Pickup switch */
+.delivery-toggle {
+    display: flex;
+    width: 100%;
+    margin-bottom: var(--space-3);
+    padding: var(--space-1);
+    background-color: var(--color-basket-line);
+    border-radius: var(--radius-round);
+}
+
+.delivery-toggle button {
+    flex: 1;
+    padding: var(--space-1) var(--space-2);
+    background: transparent;
+    border: 0;
+    border-radius: var(--radius-round);
+    color: var(--color-basket-text);
+    font-weight: 600;
+}
+
+.delivery-toggle button.active {
+    background-color: var(--color-primary);
+    color: var(--color-text-on-primary);
+}
+
+.delivery-toggle button:focus-visible {
+    outline: 3px solid var(--color-focus);
+}
+
 /* empty basket */
 .basket > p {
     text-align: center;
@@ -547,6 +576,7 @@ html {
     background: transparent;
     border: 0;
     border-radius: var(--radius-round);
+    position: relative;
 }
 
 .mobile-footer a:hover,
@@ -563,6 +593,30 @@ html {
 .mobile-footer img {
     width: 20px;
     height: 20px;
+}
+
+.basket-badge {
+    position: absolute;
+    top: 0;
+    right: 0;
+    min-width: 18px;
+    height: 18px;
+    padding: 0 var(--space-1);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: var(--color-primary);
+    color: var(--color-text-on-primary);
+    border-radius: var(--radius-round);
+    font-size: 11px;
+    font-weight: 700;
+    line-height: 1;
+    pointer-events: none; /* clicks hit the button */
+}
+
+.basket-badge:empty,
+.basket-badge[hidden] {
+    display: none;
 }
 
 .site-footer {

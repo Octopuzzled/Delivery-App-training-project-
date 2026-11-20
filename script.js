@@ -1,3 +1,4 @@
+let deliveryMode = "delivery";
 const DELIVERY_FEE = 4.99;
 const DIALOG_REF = document.getElementById("finished_order_dialog");
 let dishes;
@@ -11,26 +12,26 @@ function init() {
 }
 
 function renderNav() {
-  let html = "";
-  const NAV_REF = document.getElementById("navigation");
-  for (let i = 0; i < categories.length; i++) {
-    html += getNavTemplate(categories[i]);
-  }
-  NAV_REF.innerHTML = html;
+    let html = "";
+    const NAV_REF = document.getElementById("navigation");
+    for (let i = 0; i < categories.length; i++) {
+        html += getNavTemplate(categories[i]);
+    }
+    NAV_REF.innerHTML = html;
 }
 
 function renderMenu() {
-  let html = "";
-  for (let i = 0; i < categories.length; i++) {
-    let cardsHtml = "";
-    for (let j = 0; j < dishes.length; j++) {
-      if (dishes[j].category === categories[i].id) {
-        cardsHtml += getDishTemplate(dishes, j);
-      }
+    let html = "";
+    for (let i = 0; i < categories.length; i++) {
+        let cardsHtml = "";
+        for (let j = 0; j < dishes.length; j++) {
+            if (dishes[j].category === categories[i].id) {
+                cardsHtml += getDishTemplate(dishes, j);
+            }
+        }
+        html += getCategoryTemplate(categories[i], cardsHtml);
     }
-    html += getCategoryTemplate(categories[i], cardsHtml);
-  }
-  document.getElementById("menu").innerHTML = html;
+    document.getElementById("menu").innerHTML = html;
 }
 
 // Saved as { "Dish name": amount } so reordering dishes in db.js can't mix up amounts
@@ -85,9 +86,10 @@ function updateBasket() {
         BASKET_REF.innerHTML = getFilledBasketTemplate(
             itemsHtml,
             subtotal,
-            DELIVERY_FEE,
+            deliveryMode === "delivery" ? DELIVERY_FEE : 0,
         );
     }
+    updateBasketBadge();
 }
 
 function addToBasket(index) {
@@ -111,17 +113,17 @@ function removeOne(index) {
 }
 
 function resetBasket() {
-  for (let i = 0; i < dishes.length; i++) {
-    dishes[i].amount = 0;
-  }
-  saveBasket();
-  updateBasket();
+    for (let i = 0; i < dishes.length; i++) {
+        dishes[i].amount = 0;
+    }
+    saveBasket();
+    updateBasket();
 }
 
 function buy() {
-  openDialog();
-  resetBasket();
-  document.getElementById("basket").classList.remove("open");
+    openDialog();
+    resetBasket();
+    document.getElementById("basket").classList.remove("open");
 }
 
 function openDialog() {
@@ -133,11 +135,26 @@ function closeDialog() {
 }
 
 function closeOnBackdrop(event) {
-  if (event.target === DIALOG_REF) {
-    closeDialog();
-  }
+    if (event.target === DIALOG_REF) {
+        closeDialog();
+    }
 }
 
 function toggleBasket() {
-  document.getElementById("basket").classList.toggle("open");
+    document.getElementById("basket").classList.toggle("open");
+}
+
+function updateBasketBadge() {
+    const BASKET_COUNT_REF = document.getElementById("basket-count");
+    let amount = 0;
+    for (let i = 0; i < dishes.length; i++) {
+        amount += dishes[i].amount;
+    }
+    BASKET_COUNT_REF.textContent = amount;
+    BASKET_COUNT_REF.hidden = amount === 0;
+}
+
+function setDeliveryMode(mode) {
+    deliveryMode = mode;
+    updateBasket();
 }

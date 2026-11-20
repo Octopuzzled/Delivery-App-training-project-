@@ -21,10 +21,21 @@ function getDishTemplate(array, index) {
   return html;
 }
 
+// Delivery / Pickup switch, the active option follows the global deliveryMode
+function getDeliveryToggleTemplate() {
+  return `
+    <div class="delivery-toggle">
+        <button class="${deliveryMode === "delivery" ? "active" : ""}" onclick="setDeliveryMode('delivery')">Delivery</button>
+        <button class="${deliveryMode === "pickup" ? "active" : ""}" onclick="setDeliveryMode('pickup')">Pickup</button>
+    </div>
+  `;
+}
+
 function getEmptyBasketTemplate() {
   let html = `
     <button class="dialog-close basket-close" onclick="toggleBasket()" aria-label="Close basket">✕</button>
     <h3>Your Basket</h3>
+    ${getDeliveryToggleTemplate()}
     <p>Nothing here yet</p>
     <p>Go ahead and choose something delicious!</p>
     <img
@@ -63,6 +74,7 @@ function getFilledBasketTemplate(itemsHtml, subtotal, deliveryFee) {
   let html = `
     <button class="dialog-close basket-close" onclick="toggleBasket()" aria-label="Close basket">✕</button>
     <h3>Your Basket</h3>
+    ${getDeliveryToggleTemplate()}
     <div class="basket-items">${itemsHtml}</div>
     <div class="basket-summary">
         <div class="summary-row"><span>Subtotal</span><span>${formatPrice(subtotal)}</span></div>
