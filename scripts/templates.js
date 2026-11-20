@@ -1,5 +1,5 @@
 function getDishTemplate(array, index) {
-  let html = `
+    let html = `
     <div class="card">
         <img
             src="${array[index].image}"
@@ -17,13 +17,13 @@ function getDishTemplate(array, index) {
             </button>
         </div>
     </div>
-  `
-  return html;
+  `;
+    return html;
 }
 
 // Delivery / Pickup switch, the active option follows the global deliveryMode
 function getDeliveryToggleTemplate() {
-  return `
+    return `
     <div class="delivery-toggle">
         <button class="${deliveryMode === "delivery" ? "active" : ""}" onclick="setDeliveryMode('delivery')">Delivery</button>
         <button class="${deliveryMode === "pickup" ? "active" : ""}" onclick="setDeliveryMode('pickup')">Pickup</button>
@@ -32,7 +32,7 @@ function getDeliveryToggleTemplate() {
 }
 
 function getEmptyBasketTemplate() {
-  let html = `
+    let html = `
     <button class="dialog-close basket-close" onclick="toggleBasket()" aria-label="Close basket">✕</button>
     <h3>Your Basket</h3>
     ${getDeliveryToggleTemplate()}
@@ -42,14 +42,14 @@ function getEmptyBasketTemplate() {
         src="./assets/icon/shopping-cart.svg"
         alt="Shopping cart icon"
     />
-  `
-  return html;
+  `;
+    return html;
 }
 
 // One line item in the basket (call it only for dishes with amount > 0)
 function getBasketTemplate(array, index) {
-  let dish = array[index];
-  let html = `
+    let dish = array[index];
+    let html = `
     <div class="basket-item">
         <p class="basket-item-name">${dish.amount} x ${dish.name}</p>
         <div class="basket-item-row">
@@ -64,14 +64,14 @@ function getBasketTemplate(array, index) {
             <p class="basket-item-price">${formatPrice(dish.price * dish.amount)}€</p>
         </div>
     </div>
-  `
-  return html;
+  `;
+    return html;
 }
 
 // The whole filled basket: title, item list, totals and buy button
 function getFilledBasketTemplate(itemsHtml, subtotal, deliveryFee) {
-  let total = subtotal + deliveryFee;
-  let html = `
+    let total = subtotal + deliveryFee;
+    let html = `
     <button class="dialog-close basket-close" onclick="toggleBasket()" aria-label="Close basket">✕</button>
     <h3>Your Basket</h3>
     ${getDeliveryToggleTemplate()}
@@ -82,8 +82,8 @@ function getFilledBasketTemplate(itemsHtml, subtotal, deliveryFee) {
         <div class="summary-row summary-total"><span>Total</span><span>${formatPrice(total)}€</span></div>
     </div>
     <button class="button-buy" onclick="buy()">Buy now (${formatPrice(total)}€)</button>
-  `
-  return html;
+  `;
+    return html;
 }
 
 function getCategoryTemplate(category, cardsHtml) {
@@ -101,7 +101,7 @@ function getCategoryTemplate(category, cardsHtml) {
 }
 
 function getNavTemplate(category) {
-  return `
+    return `
     <a class="nav-item" href="#${category.id}">${category.title}</a>
   `;
 }

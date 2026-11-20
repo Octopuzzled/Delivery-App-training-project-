@@ -662,6 +662,41 @@ html {
     }
 }
 
+/* ---------- Imprint page ---------- */
+.legal {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: var(--space-5) var(--space-4) var(--space-6);
+    line-height: 1.6;
+}
+
+.legal h1 {
+    margin: var(--space-3) 0 var(--space-4);
+    font-family: var(--font-heading);
+    font-size: var(--font-size-xl);
+}
+
+.legal h2 {
+    margin: var(--space-4) 0 var(--space-2);
+    font-family: var(--font-heading);
+    font-size: var(--font-size-lg);
+}
+
+.back-link {
+    color: var(--color-text-muted);
+    text-decoration: none;
+}
+
+.back-link:hover {
+    color: var(--color-text);
+    text-decoration: underline;
+}
+
+.back-link:focus-visible {
+    outline: 3px solid var(--color-focus);
+    outline-offset: 2px;
+}
+
 /* ---------- Large screens: nav, category bar content and cards line up with the hero's left edge ---------- */
 @media (min-width: 1440px) {
     .navigation {

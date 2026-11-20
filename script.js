@@ -68,25 +68,38 @@ function formatPrice(price) {
     return price.toFixed(2).replace(".", ",");
 }
 
-function updateBasket() {
-    const BASKET_REF = document.getElementById("basket");
+function getBasketItemsHtml() {
     let itemsHtml = "";
-    let subtotal = 0;
-
     for (let i = 0; i < dishes.length; i++) {
         if (dishes[i].amount > 0) {
             itemsHtml += getBasketTemplate(dishes, i);
-            subtotal += dishes[i].price * dishes[i].amount;
         }
     }
+    return itemsHtml;
+}
 
-    if (itemsHtml === "") {
+function getSubtotal() {
+    let subtotal = 0;
+    for (let i = 0; i < dishes.length; i++) {
+        subtotal += dishes[i].price * dishes[i].amount;
+    }
+    return subtotal;
+}
+
+function getDeliveryFee() {
+    return deliveryMode === "delivery" ? DELIVERY_FEE : 0;
+}
+
+function updateBasket() {
+    const BASKET_REF = document.getElementById("basket");
+    const ITEMS_HTML = getBasketItemsHtml();
+    if (ITEMS_HTML === "") {
         BASKET_REF.innerHTML = getEmptyBasketTemplate();
     } else {
         BASKET_REF.innerHTML = getFilledBasketTemplate(
-            itemsHtml,
-            subtotal,
-            deliveryMode === "delivery" ? DELIVERY_FEE : 0,
+            ITEMS_HTML,
+            getSubtotal(),
+            getDeliveryFee(),
         );
     }
     updateBasketBadge();
