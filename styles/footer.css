@@ -1,0 +1,100 @@
+/* only shown on small screens, see media query */
+.mobile-footer {
+    display: none;
+    justify-content: space-around;
+    align-items: center;
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 50px;
+    background-color: var(--color-basket-bg);
+    z-index: 10;
+}
+
+.mobile-footer a,
+.mobile-footer button {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 48px;
+    height: 48px;
+    padding: 0;
+    background: transparent;
+    border: 0;
+    border-radius: var(--radius-round);
+    position: relative;
+}
+
+.mobile-footer a:hover,
+.mobile-footer button:hover {
+    background-color: var(--color-basket-line);
+}
+
+.mobile-footer a:focus-visible,
+.mobile-footer button:focus-visible {
+    outline: 3px solid var(--color-focus);
+    outline-offset: 2px;
+}
+
+.mobile-footer img {
+    width: 20px;
+    height: 20px;
+}
+
+.basket-badge {
+    position: absolute;
+    top: 0;
+    right: 0;
+    min-width: 18px;
+    height: 18px;
+    padding: 0 var(--space-1);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: var(--color-primary);
+    color: var(--color-text-on-primary);
+    border-radius: var(--radius-round);
+    font-size: 11px;
+    font-weight: 700;
+    line-height: 1;
+    pointer-events: none; /* clicks hit the button */
+}
+
+.basket-badge:empty,
+.basket-badge[hidden] {
+    display: none;
+}
+
+.site-footer {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap; /* links wrap on narrow screens instead of overflowing */
+    gap: var(--space-2) var(--space-5);
+    min-height: 80px;
+    padding: var(--space-3);
+    background-color: var(--color-primary);
+}
+
+.site-footer a {
+    color: var(--color-text);
+    text-decoration: none;
+    text-underline-offset: 4px;
+    text-decoration-thickness: 2px;
+    text-decoration-color: transparent;
+    transition: text-decoration-color 0.2s;
+}
+
+/* Text color stays plum (good contrast on peach), the underline fades in */
+.site-footer a:hover {
+    text-decoration-line: underline;
+    text-decoration-color: var(--color-text);
+}
+
+.site-footer a:focus-visible {
+    outline: 3px solid var(--color-focus);
+    outline-offset: 2px;
+    border-radius: var(--radius-sm);
+}
+

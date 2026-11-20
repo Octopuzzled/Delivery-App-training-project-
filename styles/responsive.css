@@ -1,0 +1,118 @@
+/* ---------- Large screens: nav, category bar content and cards line up with the hero's left edge ---------- */
+@media (min-width: 1440px) {
+    .navigation {
+        padding-left: calc((100% - 1440px) / 2);
+    }
+
+    .category-header-inner {
+        padding-left: 0;
+    }
+
+    .menu-cards {
+        padding-left: 0;
+    }
+}
+
+/* ---------- Tablet: basket still visible, but everything is more compact ---------- */
+@media (min-width: 601px) and (max-width: 900px) {
+    .basket {
+        flex-basis: 220px;
+        padding: var(--space-3) var(--space-2);
+    }
+
+    .basket h3 {
+        margin-bottom: var(--space-3);
+    }
+
+    .basket > img {
+        width: 80px;
+        height: 80px;
+        margin-top: var(--space-4);
+    }
+
+    .button-buy {
+        padding: var(--space-2) var(--space-4);
+        font-size: var(--font-size-base);
+    }
+
+    .menu-cards {
+        padding: 0 calc(220px + 2 * var(--space-2)) var(--space-5)
+            var(--space-3);
+        gap: var(--space-2);
+    }
+
+    .card {
+        gap: var(--space-2);
+        padding: var(--space-2);
+    }
+
+    .card img {
+        width: 110px;
+        height: 90px;
+    }
+
+    .details h3 {
+        font-size: var(--font-size-base);
+    }
+
+    .details p {
+        font-size: 12px;
+    }
+
+    .button-to-basket {
+        padding: var(--space-1) var(--space-2);
+        font-size: 12px;
+    }
+}
+
+/* ---------- Small screens ---------- */
+@media (max-width: 600px) {
+    .site-header {
+        padding: 0 var(--space-3);
+    }
+
+    .hero-section {
+        height: 220px;
+    }
+
+    .menu-cards {
+        padding: 0 var(--space-3) var(--space-5); /* no basket column on mobile */
+    }
+
+    .card {
+        flex-direction: column;
+    }
+
+    .card img {
+        width: 100%;
+        height: 180px;
+    }
+
+    body {
+        padding-bottom: 80px; /* room for the fixed bottom bar */
+    }
+
+    .site-footer {
+        display: none;
+    }
+
+    .mobile-footer {
+        display: flex;
+    }
+
+    .basket {
+        display: none;
+    }
+
+    .basket.open {
+        display: flex;
+        position: fixed;
+        inset: 0;
+        z-index: 20;
+        flex: none;
+        width: 100%;
+        height: 100dvh;
+        max-height: none;
+        border-radius: 0;
+    }
+}
