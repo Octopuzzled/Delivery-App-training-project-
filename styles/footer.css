@@ -46,8 +46,8 @@
     position: absolute;
     top: 0;
     right: 0;
-    min-width: 18px;
-    height: 18px;
+    min-width: 22px;
+    height: 22px;
     padding: 0 var(--space-1);
     display: flex;
     align-items: center;
@@ -55,7 +55,7 @@
     background-color: var(--color-primary);
     color: var(--color-text-on-primary);
     border-radius: var(--radius-round);
-    font-size: 11px;
+    font-size: var(--font-size-sm);
     font-weight: 700;
     line-height: 1;
     pointer-events: none; /* clicks hit the button */

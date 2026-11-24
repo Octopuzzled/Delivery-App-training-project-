@@ -137,6 +137,7 @@ function buy() {
     openDialog();
     resetBasket();
     document.getElementById("basket").classList.remove("open");
+    document.body.classList.remove("basket-open");
 }
 
 function openDialog() {
@@ -154,7 +155,10 @@ function closeOnBackdrop(event) {
 }
 
 function toggleBasket() {
-    document.getElementById("basket").classList.toggle("open");
+    const isOpen = document
+        .getElementById("basket")
+        .classList.toggle("open");
+    document.body.classList.toggle("basket-open", isOpen); // locks page scroll on mobile
 }
 
 function updateBasketBadge() {

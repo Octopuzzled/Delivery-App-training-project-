@@ -11,10 +11,18 @@ img {
 }
 
 body {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+    min-height: 100dvh; /* sticky footer: main grows, footer sits at the bottom */
     font-family: var(--font-body);
     font-size: var(--font-size-base);
     color: var(--color-text);
     background-color: var(--color-bg);
+}
+
+main {
+    flex: 1;
 }
 
 button {
@@ -28,7 +36,8 @@ button {
     justify-content: space-between;
     align-items: center;
     height: 80px;
-    padding: 0 var(--space-5);
+    /* content lines up with the 1440px frame on wide screens */
+    padding: 0 max(var(--space-5), calc((100% - 1440px) / 2 + var(--space-5)));
     background-color: var(--color-primary);
 }
 
@@ -91,10 +100,9 @@ button {
 }
 .rating-count {
     color: var(--color-text-muted);
-    font-size: 0.8em;
+    font-size: 1em;
 }
 
 .stars img {
     width: var(--font-size-sm);
 }
-

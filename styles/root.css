@@ -35,7 +35,7 @@
     /* ---------- Typography ---------- */
     --font-heading: "Fredoka", "Nunito", system-ui, sans-serif;
     --font-body: "Nunito", system-ui, -apple-system, "Segoe UI", sans-serif;
-    --font-size-sm: 14px;
+    --font-size-sm: 16px; /* nothing readable goes below 16px */
     --font-size-base: 16px;
     --font-size-lg: 20px;
     --font-size-xl: 32px;
