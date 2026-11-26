@@ -1,3 +1,9 @@
+/**
+ * Makes the HTML card for one dish in the menu.
+ * @param {Object[]} array - The dishes array
+ * @param {number} index - Position of the dish in the array
+ * @returns {string} The HTML of the card
+ */
 function getDishTemplate(array, index) {
     let html = `
     <div class="card">
@@ -21,7 +27,10 @@ function getDishTemplate(array, index) {
     return html;
 }
 
-// Delivery / Pickup switch, the active option follows the global deliveryMode
+/**
+ * Makes the Delivery / Pickup switch, the active option follows the global deliveryMode.
+ * @returns {string} The HTML of the switch
+ */
 function getDeliveryToggleTemplate() {
     return `
     <div class="delivery-toggle">
@@ -31,6 +40,10 @@ function getDeliveryToggleTemplate() {
   `;
 }
 
+/**
+ * Makes the HTML for the basket when nothing is in it.
+ * @returns {string} The HTML of the empty basket
+ */
 function getEmptyBasketTemplate() {
     let html = `
     <button class="dialog-close basket-close" onclick="toggleBasket()" aria-label="Close basket">✕</button>
@@ -46,7 +59,12 @@ function getEmptyBasketTemplate() {
     return html;
 }
 
-// One line item in the basket (call it only for dishes with amount > 0)
+/**
+ * Makes one line item in the basket (call it only for dishes with amount > 0).
+ * @param {Object[]} array - The dishes array
+ * @param {number} index - Position of the dish in the array
+ * @returns {string} The HTML of the basket item
+ */
 function getBasketTemplate(array, index) {
     let dish = array[index];
     let html = `
@@ -68,7 +86,13 @@ function getBasketTemplate(array, index) {
     return html;
 }
 
-// The whole filled basket: title, item list, totals and buy button
+/**
+ * Makes the whole filled basket: title, item list, totals and buy button.
+ * @param {string} itemsHtml - The HTML of all basket items
+ * @param {number} subtotal - The price of all dishes
+ * @param {number} deliveryFee - The delivery fee (0 for pickup)
+ * @returns {string} The HTML of the filled basket
+ */
 function getFilledBasketTemplate(itemsHtml, subtotal, deliveryFee) {
     let total = subtotal + deliveryFee;
     let html = `
@@ -86,6 +110,12 @@ function getFilledBasketTemplate(itemsHtml, subtotal, deliveryFee) {
     return html;
 }
 
+/**
+ * Makes one category section with its header and dish cards.
+ * @param {Object} category - The category (id, title, icon)
+ * @param {string} cardsHtml - The HTML of the dish cards in this category
+ * @returns {string} The HTML of the section
+ */
 function getCategoryTemplate(category, cardsHtml) {
     return `
         <section class="menu-category" id="${category.id}">
@@ -100,6 +130,11 @@ function getCategoryTemplate(category, cardsHtml) {
     `;
 }
 
+/**
+ * Makes one link for the navigation.
+ * @param {Object} category - The category (id, title, icon)
+ * @returns {string} The HTML of the nav link
+ */
 function getNavTemplate(category) {
     return `
     <a class="nav-item" href="#${category.id}">${category.title}</a>

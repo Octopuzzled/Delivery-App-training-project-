@@ -3,6 +3,9 @@ const DELIVERY_FEE = 4.99;
 const DIALOG_REF = document.getElementById("finished_order_dialog");
 let dishes;
 
+/**
+ * Starts the app: gets the dishes, shows menu + nav and loads the basket.
+ */
 function init() {
     dishes = dishesArray;
     renderMenu();
@@ -11,6 +14,9 @@ function init() {
     updateBasket();
 }
 
+/**
+ * Puts a nav link for every category into the navigation.
+ */
 function renderNav() {
     let html = "";
     const NAV_REF = document.getElementById("navigation");
@@ -20,6 +26,10 @@ function renderNav() {
     NAV_REF.innerHTML = html;
 }
 
+/**
+ * Shows all categories with their dish cards in the menu.
+ * A dish goes into a category if the category id matches.
+ */
 function renderMenu() {
     let html = "";
     for (let i = 0; i < categories.length; i++) {
@@ -34,7 +44,10 @@ function renderMenu() {
     document.getElementById("menu").innerHTML = html;
 }
 
-// Saved as { "Dish name": amount } so reordering dishes in db.js can't mix up amounts
+/**
+ * Saves the basket in the localStorage.
+ * Saved as { "Dish name": amount } so reordering dishes in db.js can't mix up amounts
+ */
 function saveBasket() {
     const AMOUNTS = {};
     for (let i = 0; i < dishes.length; i++) {
@@ -49,6 +62,10 @@ function saveBasket() {
     }
 }
 
+/**
+ * Loads the saved amounts from the localStorage and sets them on the dishes.
+ * If something is wrong with the data the amount is just 0.
+ */
 function loadBasket() {
     let saved = {};
     try {
@@ -64,10 +81,19 @@ function loadBasket() {
     }
 }
 
+/**
+ * Makes a price look nice with 2 decimals and a comma.
+ * @param {number} price - The price as a number, e.g. 11.9
+ * @returns {string} The formatted price, e.g. "11,90"
+ */
 function formatPrice(price) {
     return price.toFixed(2).replace(".", ",");
 }
 
+/**
+ * Builds the HTML for all dishes that are in the basket.
+ * @returns {string} The HTML of the basket items (empty string if nothing is in there)
+ */
 function getBasketItemsHtml() {
     let itemsHtml = "";
     for (let i = 0; i < dishes.length; i++) {
@@ -78,6 +104,10 @@ function getBasketItemsHtml() {
     return itemsHtml;
 }
 
+/**
+ * Adds up price * amount of all dishes (without delivery fee).
+ * @returns {number} The subtotal
+ */
 function getSubtotal() {
     let subtotal = 0;
     for (let i = 0; i < dishes.length; i++) {
@@ -86,10 +116,17 @@ function getSubtotal() {
     return subtotal;
 }
 
+/**
+ * Gives back the delivery fee. Pickup is free.
+ * @returns {number} The fee for delivery, otherwise 0
+ */
 function getDeliveryFee() {
     return deliveryMode === "delivery" ? DELIVERY_FEE : 0;
 }
 
+/**
+ * Renders the basket again (empty or filled) and updates the badge.
+ */
 function updateBasket() {
     const BASKET_REF = document.getElementById("basket");
     const ITEMS_HTML = getBasketItemsHtml();
@@ -105,18 +142,30 @@ function updateBasket() {
     updateBasketBadge();
 }
 
+/**
+ * Adds one more of a dish to the basket.
+ * @param {number} index - Position of the dish in the dishes array
+ */
 function addToBasket(index) {
     dishes[index].amount++;
     saveBasket();
     updateBasket();
 }
 
+/**
+ * Takes a dish completely out of the basket.
+ * @param {number} index - Position of the dish in the dishes array
+ */
 function removeAll(index) {
     dishes[index].amount = 0;
     saveBasket();
     updateBasket();
 }
 
+/**
+ * Removes one of a dish from the basket (never goes below 0).
+ * @param {number} index - Position of the dish in the dishes array
+ */
 function removeOne(index) {
     if (dishes[index].amount > 0) {
         dishes[index].amount--;
@@ -125,6 +174,9 @@ function removeOne(index) {
     updateBasket();
 }
 
+/**
+ * Sets all amounts back to 0 so the basket is empty.
+ */
 function resetBasket() {
     for (let i = 0; i < dishes.length; i++) {
         dishes[i].amount = 0;
@@ -133,6 +185,9 @@ function resetBasket() {
     updateBasket();
 }
 
+/**
+ * Finishes the order: shows the dialog, empties the basket and closes it.
+ */
 function buy() {
     openDialog();
     resetBasket();
@@ -140,20 +195,33 @@ function buy() {
     document.body.classList.remove("basket-open");
 }
 
+/**
+ * Opens the "order finished" dialog.
+ */
 function openDialog() {
     DIALOG_REF.showModal();
 }
 
+/**
+ * Closes the "order finished" dialog.
+ */
 function closeDialog() {
     DIALOG_REF.close();
 }
 
+/**
+ * Closes the dialog when you click next to it (on the backdrop).
+ * @param {MouseEvent} event - The click event
+ */
 function closeOnBackdrop(event) {
     if (event.target === DIALOG_REF) {
         closeDialog();
     }
 }
 
+/**
+ * Opens or closes the basket (for mobile) and locks the page scroll while open.
+ */
 function toggleBasket() {
     const isOpen = document
         .getElementById("basket")
@@ -161,6 +229,10 @@ function toggleBasket() {
     document.body.classList.toggle("basket-open", isOpen); // locks page scroll on mobile
 }
 
+/**
+ * Shows how many items are in the basket on the basket icon.
+ * The badge is hidden if the basket is empty.
+ */
 function updateBasketBadge() {
     const BASKET_COUNT_REF = document.getElementById("basket-count");
     let amount = 0;
@@ -171,6 +243,10 @@ function updateBasketBadge() {
     BASKET_COUNT_REF.hidden = amount === 0;
 }
 
+/**
+ * Switches between delivery and pickup and updates the basket.
+ * @param {string} mode - Either "delivery" or "pickup"
+ */
 function setDeliveryMode(mode) {
     deliveryMode = mode;
     updateBasket();
